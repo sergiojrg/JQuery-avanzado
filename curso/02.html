@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>codigo dependiendo la pagina</title>
+</head>
+<body>
+    
+    <script>
+        var route = {
+            _routes: {},
+            add: function(url,action){
+                this._routes[url] = action;
+            },
+            run: function(){
+                $.each(this._routes,function(patron){
+                    console.log(patron)
+                    if(location.href.match(patron)){
+                        this();
+                    } 
+                })
+            }
+        };
+
+        route.add('02.html',function(){
+            console.log('Esta codigo es de 02.html')
+        })
+        route.run();
+
+        // $.each( [ "a", "b", "c" ], function( i, l ){
+        // alert( "Index #" + i + ": " + l );
+        // });
+
+        // $.each({ name: "John", lang: "JS" }, function( k, v ) {
+        // alert( "Key: " + k + ", Value: " + v );
+        // });
+
+    </script>
+</body>
+</html>

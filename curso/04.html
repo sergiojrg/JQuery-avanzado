@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <style>
+        .elem{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Algun Texto</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolore consequuntur animi qui nobis officia dignissimos aliquid labore in odit.</p>
+
+    <div class="elem">
+
+    </div>
+
+    <script>
+        var $elem = $('.elem');
+        //es un div
+        $elem.is('div') && console.log('Es un div')
+        $elem.is('.elem') && console.log('tiene clase elem')
+
+        //Esta visible
+        $elem.is(':visible') && console.log('Elemento es visible')
+
+        $elem.animate({'width':'200px'},1000)
+        //esta animado
+        $elem.is(':animated') && console.log('es animado')
+    </script>
+    
+</body>
+</html>
