@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Manipulacion del DOM al minim</title>
+</head>
+<body>
+
+    <h1>Algun texto</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci harum vitae quasi neque distinctio inventore exercitationem, veritatis corporis repudiandae doloremque.</p>
+
+    <div class="elem"></div>
+
+    <script>
+        var inicio = new Date();
+
+        var $elem = $('.elem');
+        // for(var i=0; i<=10;i++){
+        //     $elem.append(`<li>Elemento: ${i} </li>`)
+        // }
+
+        // unica insercion al DOM
+        var arr = [];
+
+        for(var i=0;i<=1000;i++){
+            arr.push(`<li>Elemento: ${i} </li>`)
+        }
+
+        $elem.append(arr.join(''))
+
+        var fin = new Date();
+
+        //resultados
+        console.log(`Inicio: ${inicio.getTime()}`)
+        console.log(`Fin: ${fin.getTime()}`)
+        console.log(`Diff: ${fin.getTime() - inicio.getTime()}`)
+    </script>
+    
+</body>
+</html>

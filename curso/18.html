@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Optimizar selectores</title>
+</head>
+<body>
+    <h1>Algun texto</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia alias dolore vero quos. Officiis ea atque maxime dolores delectus libero.</p>
+
+    <div id="pan">
+        <div class="jalea" id="jalea">
+
+        </div>
+    </div>
+
+    <script>
+        iniciar_selector('#pan div:first');
+        iniciar_selector('#pan .jalea');
+        iniciar_selector('.jalea');
+        iniciar_selector('#jalea');
+
+        function iniciar_selector(selector){
+            console.log(selector);
+            var inicio = new Date().getTime();
+            for(var i=0;i<1000;i++){
+                $(selector);
+            }
+
+            fin_timer(inicio);
+        }
+
+        function fin_timer(inicio){
+            var fin = new Date().getTime();
+            console.log('Tiempo: ', fin - inicio)
+        }
+    </script>
+
+</body>
+</html>

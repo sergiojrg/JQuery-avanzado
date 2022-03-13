@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Objetos jquery como arreglos</title>
+</head>
+<body>
+    <h1>Algun titutlo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quod placeat voluptate harum necessitatibus dolore et id asperiores optio ratione!</p>
+
+    <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+
+    <script>
+        var arr = $('li');
+        var iteraciones = 100000;
+
+        console.time('ciclo nativo')
+
+        for(var z=0;z<iteraciones; z++){
+            var largo = arr.length;
+            for(var i=0; i<largo;i++){
+                arr[i];
+            }
+        }
+
+        console.timeEnd('ciclo nativo');
+
+        console.time('ciclo foreach');
+
+        for(var z=0;z<iteraciones;z++){
+            arr.each(function(i,val){
+                this;
+            })
+        }
+        console.timeEnd('ciclo foreach')
+
+    </script>
+    
+</body>
+</html>

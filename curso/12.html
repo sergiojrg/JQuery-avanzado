@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usar anchor tags</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    
+    <h1>Es un titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, sapiente aspernatur quaerat delectus iste voluptates quis pariatur laboriosam voluptatibus illo?</p>
+
+    <script>
+        var url = 'https://www.google.com/search?q=udemy&oq=udemy+&aqs=chrome..69i57j0i433i512j0i512l2j69i60l4.2390j0j7&sourceid=chrome&ie=UTF-8#comentarios'
+
+        var  $a = $('<a>',{ href:url});
+
+        console.log( 'hostname: ', $a.prop('hostname'));
+        console.log( 'Path: ', $a.prop('pathname'));
+        console.log( 'Query: ', $a.prop('search'));
+        console.log( 'Protocolo: ', $a.prop('protocol'));
+        console.log( 'Hash: ', $a.prop('hash'));
+
+        //obtener el query
+        console.log($a.prop('search').split('&'))
+
+
+    </script>
+</body>
+</html>
