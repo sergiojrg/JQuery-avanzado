@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="assets/libs/small-notification.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.css.map">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Fusiona objetos con $.extend</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora esse, reiciendis neque repudiandae repellendus rerum magnam modi repellat quo impedit!</p>
+
+    <!-- <div id="small-top-left-container">
+        <div class="small-box">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="assets/img/ball.png">
+                </div>
+                <div class="col-md-8">
+                    <h4>Algun titulo</h4>
+                    <p>Esta es una descripcion cualquiera</p>
+                </div>
+            </div>
+        </div>
+        <div class="small-box">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="assets/img/ball.png">
+                </div>
+                <div class="col-md-8">
+                    <h4>Algun titulo</h4>
+                    <p>Esta es una descripcion cualquiera</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <script>
+        $(document).ready(function(){
+            var opciones = {
+                titulo:'Nuevo titulo',
+                img:'assets/img/Katy_Perry.jpg',
+                contenido:'Calandole al extend'
+            }
+            $.smallBox(opciones); 
+        })
+
+    </script>
+</body>
+</html>

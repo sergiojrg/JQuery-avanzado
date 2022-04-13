@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Uso de localstorage</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam optio ab quam voluptatem ea corporis saepe incidunt a distinctio soluta.</p>
+
+    <script>
+        if(localStorage.getItem('mostrado')){
+            var mostrado = localStorage.getItem('mostrado')
+            console.log('mostrado',mostrado)
+        }else{
+            localStorage.setItem('mostrado','1');
+    
+            $(document).ready(function(){
+                console.log('Asi funciona nuestra app')
+            })
+        }
+    </script>
+    
+</body>
+</html>

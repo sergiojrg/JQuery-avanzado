@@ -11,7 +11,7 @@
   $.smallBox = function( ajustes ){
 
     var contenido = "";
-
+    console.log(ajustes)
     ajustes = $.extend({
 
       titulo: "Hola Mundo",

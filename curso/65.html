@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="modernizr-custom (3).js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, sunt. Accusantium id et nostrum placeat error dicta inventore eius aperiam!</p>
+
+    <script>
+        // console.log('Media query',Modernizr.mq)
+        var w = $(window)
+
+        w.on('resize',function(){
+            if(Modernizr.mq('(max-width:640px) and (orientation:portrait)')){
+                console.log('Celular en modo portrait')
+            }
+            else if(Modernizr.mq('(max-width:960px)')){
+                console.log('Es una pantalla poco estrecha')
+            }
+            else{
+                console.log('Es una pantalla normal')
+            }
+        })
+    </script>
+    
+</body>
+</html>

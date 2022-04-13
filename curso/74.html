@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js" integrity="sha512-VjRpiWhUqdNa9bwBV7LnlG8CwsCVPenFyOQTSRTOGHw/tjtME96zthh0Vv9Itf3i8w4CkUrdYaS6+dAt1m1YXQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        #colores{
+            width:150px;
+            height:150px;
+            background-color:red;
+        }
+    </style>
+    <title>Animar colores</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis aspernatur voluptatem sapiente, quibusdam doloremque quisquam voluptatibus possimus necessitatibus natus nihil.</p>
+    <p>https://github.com/jquery/jquery-color</p>
+
+    <div id="colores"></div>
+    <button>Animar color</button>
+
+    <script>
+
+        var c = $.Color('#4a1f81');
+        console.log("red",c.red())
+        console.log("green",c.red())
+        console.log("azul",c.red())
+
+        $('button').click(function(){
+            $('#colores').css('background-color','white')
+                         .animate({'background-color':'blue'})
+                         .animate({'background-color':'green'})
+                         .animate({'background-color':'purple'},2000)
+                         .animate({'background-color':'yellow'})
+        })
+    </script>
+    
+</body>
+</html>

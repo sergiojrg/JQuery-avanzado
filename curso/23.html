@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>No esperar que la pagina este lista</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit alias obcaecati nulla voluptatum, ex iste non ea a tempore dolore?</p>
+
+
+    <script>
+        //$(document).ready(function(){
+
+            //delegacion del evento agregando button
+            $(document).on('click','button',function(){
+                console.log('Hola mundo')
+            })
+
+        //})
+    </script>
+
+    <button class="btn">Click me</button>
+
+    
+</body>
+</html>

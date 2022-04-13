@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>Metodos globales</title>
+</head>
+<body>
+    <h1>Metodo globales de AJAX</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quasi aliquid laudantium beatae est sapiente ea? Repellat obcaecati culpa eligendi.</p>
+
+
+    <div class="text-center" id="preloader">
+        <img src="assets/img/preloader.gif">
+    </div>
+    <p class="dato"></p>
+
+    <script>
+        var preloader = $('#preloader')
+        var doc = $(document)
+        var info
+
+        
+        
+        doc.ajaxStart(function(){
+            preloader.fadeIn();
+        })
+        
+        doc.ajaxComplete(function(){
+            preloader.fadeOut();
+            mostrarInfo()
+            // setTimeout(()=>{
+            //     mostrarInfo()
+            // },900)
+        })
+        
+        $.get('assets/data/1.json').done(function(r){
+            info = r.mensaje
+            // mostrarInfo()
+        })
+        .fail(function(err){
+            console.log(err)
+        })
+
+        function mostrarInfo(){
+            $('.dato').text(info)
+        }
+
+
+        
+    </script>
+    
+</body>
+</html>

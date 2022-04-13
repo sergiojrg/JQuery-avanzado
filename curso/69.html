@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es-mx.min.js" integrity="sha512-Qy4cmZ6v7vnVEc0cn/BIj9q15eB98do4hMvu8xtc/H+v+YYpdpDrB35flHS3NPLbZUpe1npSYY/u+Gi3UB61vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Simplificar las funciones de fecha y tiempo</title>
+</head>
+<body>
+    <h1>algun titulo</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam sequi odit omnis aliquam ab nemo quos eaque eum sit nesciunt?</p>
+    <p>usando libreria hoy</p>
+
+    <script>
+        var hoy = moment()
+        var fecha = new Date();
+        console.log(fecha)
+        console.log(hoy)
+
+        console.log(hoy.format('HH:mm:ss'))
+
+        var miCumple = moment([1998,5,23]);
+        console.log('El mes es ', miCumple.format('MMMM'))
+
+        var diaSemana = moment().day();
+        console.log(diaSemana)
+        console.log('Dia de la semana', moment.weekdays()[diaSemana])
+
+        var mes = moment().month();
+        console.log('El mes es: ', moment.months()[mes])
+
+        console.log('Hora de londres es: ', moment.utc().format('HH:mm:ss'))
+        console.log('Hora de Japon es: ', moment.utc().add(9,'hours').format('HH:mm:ss'))
+
+        console.log('El proxima mundial falta: ', 
+            moment('Junio 23, 2022', 'MMM DDYYYY').fromNow()
+        )
+
+        console.log('Que fecha sera dentro de 7 dias: ',
+            moment().add(7,'days').format('MMM Do, YYYY')
+        )
+
+        var desayuno = moment('8:00','HH:mm');
+        var almuerzo = moment('12:30','HH:mmm')
+
+        console.log(moment.duration(almuerzo - desayuno).humanize() + 'horas de trabajo entre almuerzo y trabajo')
+
+        </script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Eventos personalizados</title>
+</head>
+<body>
+    <h1>Algun texto</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus nostrum asperiores pariatur ratione dolorum perspiciatis quaerat eligendi accusamus officiis illum.</p>
+
+    <button id="btn1">Saltar</button>
+    <button id="btn2">Golpear</button>
+    <button id="btn3">Click</button>
+    <div id="contenedor"></div>
+    <script>
+        var btn1 = $('#btn1'),
+            btn2 = $('#btn2'),
+            btn3 = $('#btn3')
+
+        var div = $('#contenedor')
+
+        div.on({
+            saltar: function(){
+                console.log('saltando')
+            },
+            golpear: function(e,data){
+                console.log('golpeando '+ data)
+            },
+            click: function(){
+                console.log('simulando un click')
+            }
+        });
+
+        btn1.click(function(){
+            div.trigger('saltar');
+        })
+        btn2.click(function(){
+            div.trigger('golpear',['muy fuerte']);
+        })
+        btn3.click(function(){
+            div.trigger('click');
+        })
+    </script>
+    
+</body>
+</html>

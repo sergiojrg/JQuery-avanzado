@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Consola</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptate consequatur accusantium ut nulla aspernatur adipisci fuga, nisi voluptatem excepturi.</p>
+
+    <script>
+        console.log('Hola mundo')
+
+
+        var a = 'Buenos', b = 'dias';
+        console.log(`Hola, ${a} ${b}`)
+
+        console.dir(window);
+
+        console.info('Informacion')
+        console.warn('Alerta')
+        console.error('Algo salio mal')
+
+        for(var i=0; i<10; i++){
+            // console.log(`Vamos por ${i+1}`)
+            console.count(`Vamos por`)
+        }
+
+        console.group('Funcion main')
+        console.log('Vamos en camino')
+        console.info('En camino')
+        console.warn('Estamos llegando')
+        console.error('Chocamos...')
+        console.groupEnd();
+
+        console.time('Medir el tiempo de este ciclo')
+        var numero = 0;
+        for(var i=0; i<100000; i++){
+            numero += 10;
+        }
+        console.timeEnd('Medir el tiempo de este ciclo')
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #mensaje{
+            display:block;
+        }
+        html.JS #mensaje {
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Algun texto</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste libero corporis deserunt quibusdam, fuga architecto hic. At quam accusamus illo?</p>
+
+    <div id="mensaje">
+        Este sitio, require javascript, activelo
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('html').addClass('JS');
+        })
+    </script>
+    
+</body>
+</html>

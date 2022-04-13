@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="assets/libs/blur.js"></script>
+    <link rel="stylesheet" href="assets/libs/chosen/chosen.min.css">
+    <title>Blur</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea est dignissimos natus maxime vero neque tempore dolores ducimus temporibus fugit?</p>
+
+    <p>https://github.com/jakiestfu/Blur.js-II</p>
+
+    <p>customClass: uses this calss for some of the inner workings of the script</p>
+    <p>radius:the blur radius you want to use (int)</p>
+    <p>persist:boolean removes previously blurred elements</p>
+    <p>resetting: $.blurjs('reset')</p>
+
+    
+    <script>
+        $('p').blurjs()
+        setTimeout(function(){
+            $.blurjs('reset')
+        },4000)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Conocer tus eventos</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore exercitationem numquam voluptatem id laborum esse tenetur ducimus saepe quo assumenda.</p>
+
+    <div id="holder">
+        <button id="boton1">1</button>
+        <button id="boton2">2</button>
+        <button id="boton3">3</button>
+        <button id="boton4">4</button>
+        <button id="boton5" style="float:right">Limpiar</button>
+    </div>
+
+    <script>
+        //.on() todo se unifica en el on 
+        var boton1 = $('#boton1'),
+            boton2 = $('#boton2'),
+            boton3 = $('#boton3'),
+            boton4 = $('#boton4'),
+            boton5 = $('#boton5');
+
+        boton1.on('click',function(){
+            console.log('click')
+        });
+        boton2.on('mouseenter mouseleave',function(){
+            console.log('entro mouse/sale mouse')
+        });
+        boton3.on('click',Math.round(Math.random()*20),function(e){
+            console.log('El numero random es ', e.data)
+        });
+        boton4.on('click.temp',function(){
+            console.log('temp disparado')
+        });
+        boton5.on('click',function(){
+            console.clear();
+            $('button').off('.temp')
+            console.log('Eventos de botones temp eliminados')
+        });
+    </script>
+    
+</body>
+</html>

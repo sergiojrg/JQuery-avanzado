@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Cargar archivos externos</title>
+</head>
+<body>
+    <h1>Algun texto</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In repudiandae delectus cum, molestiae ex dolorum! Qui quidem vel aspernatur sapiente?</p>
+
+    <p id="parrafo1"></p>
+    <p id="parrafo2"></p>
+
+    <script>
+        var par1 = $('#parrafo1')
+        var par2 = $('#parrafo2')
+
+        par1.load('assets/data/1.txt')
+        par2.load('assets/data/1.html #header');
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="assets/libs/bigscreen.min.js"></script>
+    <title>disparar el modo de pantalla completa</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorem ad pariatur modi odit earum vitae dolorum harum at velit!</p>
+    <p>https://github.com/bdougherty/BigScreen</p>
+
+    <img src="assets/img/foto.jpg" alt="">
+
+    <button>FullScreen</button>
+
+    <script>
+
+        $('button').click(function(){
+            // BigScreen.toggle()
+            var foto = $('img')[0];
+            BigScreen.request(foto);
+        })
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Escuchar eventos de elementos que no existen</title>
+</head>
+<body>
+    <h1>Algun texto</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro cupiditate mollitia unde aspernatur non eaque libero numquam voluptas doloribus fuga!</p>
+
+
+    <ul id="lista">
+        <li>viejo item</li>
+        <li>viejo item</li>
+        <li>viejo item</li>
+        <li>viejo item</li>
+        <li>viejo item</li>
+        <li>viejo item</li>
+        <li>viejo item</li>
+        <li>viejo item</li>
+    </ul>
+
+    <script>
+        var lista = $('#lista');
+        var contador = 0;
+        lista.on('click','li',function(){
+            contador++;
+            $(this).remove();
+            lista.append(`<li>Nuevo item ${contador}</li>`)
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="assets/libs/mmd.min.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Markdown</title>
+</head>
+<body>
+    <h1>Markdown</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, nisi? Deleniti et dolore ipsa veniam eaque ullam saepe qui illo.</p>
+    <p>https://github.com/adam-p/markdown-here</p>
+    <p>mmd.min.js</p>
+
+    <textarea id="txtMark" cols="30" rows="10" class="form-control"></textarea>
+
+    <hr>
+    <br>
+    <button class="btn btn-primary">Convertir</button>
+    <hr>
+    <div id="markToHtml"></div>
+
+    <script>
+        var txtMark = $('#txtMark')
+        var marktoHtml = $('#markToHtml')
+        $('.btn').click(function(){
+            console.log('hola')
+            var texto = txtMark.val()
+
+            var salida = mmd(texto);
+
+            marktoHtml.html(salida)
+        })
+
+    </script>
+    
+</body>
+</html>

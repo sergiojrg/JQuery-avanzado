@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <style>
+        #cajaAzul{
+            width:100px;
+            height:100px;
+            background-color:blue;
+            border-radius:5px;
+        }
+    </style>
+    <title>Animaciones por css</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente architecto repellendus provident veniam illo necessitatibus, quibusdam consectetur laborum ea in?</p>
+    <p>https://animate.style/</p>
+
+    <div id="cajaAzul">
+
+    </div>
+
+    <button>Animar</button>
+
+    <script>
+        var caja = $('#cajaAzul');
+
+        $.fn.extend({
+            animateCss: function (animationName) {
+                var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                this.addClass('animated ' + animationName).one(animationEnd, function() {
+                    $(this).removeClass('animated ' + animationName);
+                });
+                return this;
+            }
+        });
+
+        // caja.addClass('animated slideInUp')
+        $('button').click(function(){
+            caja.animateCss('bounce')
+        })
+
+    </script>
+    
+</body>
+</html>

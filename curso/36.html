@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Mult peticiones ajax</title>
+</head>
+<body>
+    <h1>Peticiones asincronas</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium temporibus soluta tenetur cupiditate unde, eum dolor eos veritatis. Excepturi, minima!</p>
+
+    <script>
+        $.when($.get('assets/data/1.json'),$.get('assets/data/2.json'))
+         .then(function(r1,r2){
+            r1 = r1[0];
+            r2 = r2[0]
+            var mensaje = r1.mensaje +' '+ r2.nombre + ' '+ r2.edad
+            console.log(mensaje)
+         }).catch(function(err){
+             console.log('Errorrr')
+         })
+    </script>
+    
+</body>
+</html>

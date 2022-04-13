@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Ordenar elementos dentro de una coleccion</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, nesciunt nulla eum itaque quisquam quaerat maxime dolorem ipsum modi earum!</p>
+
+    <button>Ordenar</button>
+    <ul id="numeros">
+        <li>100</li>
+        <li>-2</li>
+        <li>5</li>
+        <li>9</li>
+        <li>40</li>
+        <li>50</li>
+        <li>1</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        $('button').on('click',function(){
+            var numeros = $('#numeros li');
+
+            numeros.sort(function(a,b){
+                
+                return parseInt(a.textContent) - parseInt(b.textContent)
+            }).appendTo(numeros.parent())
+        })
+    </script>
+    
+</body>
+</html>

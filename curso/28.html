@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Simular eventos y parametros</title>
+    <style>
+        .slideshow{
+            width: 400px;
+            height:200px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algun texto</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis sit eum iure autem modi repellendus provident nemo distinctio ducimus earum.</p>
+
+    <div class="slideshow">
+
+    </div>
+    <button id="btnSiguiente">>></button>
+
+    <script>
+        $('#btnSiguiente').on('click',function(e,argumentos){
+            console.log(argumentos)
+            argumentos = argumentos || 'pink'
+            $('.slideshow').css({
+                backgroundColor: argumentos
+            });
+        });
+
+        var boton = $('#btnSiguiente');
+
+        //boton.trigger('click'); //simulacion de click
+        boton.trigger('click'); //simulacion de click
+        // boton.trigger('click',['green'])
+
+    </script>
+    
+</body>
+</html>

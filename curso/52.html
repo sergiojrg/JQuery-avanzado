@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>$.grep()</title>
+</head>
+<body>
+    <h1>Algun titu</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi quas aspernatur provident asperiores optio. Illo animi eveniet debitis ut culpa?</p>
+
+    <script>
+        var dias_mes = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]
+        var domingos = $.grep(dias_mes,function(day,index){
+            var f = new Date();
+            f.setDate(day);
+            return f.getDay() == 1;
+        });
+
+        console.log(domingos)
+
+    </script>
+    
+</body>
+</html>

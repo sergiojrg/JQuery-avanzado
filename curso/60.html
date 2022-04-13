@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        #elem{
+            background-color:blue;
+            width:20px;
+            height:20px;
+            text-align: center;
+            line-height: 40px;
+            color:#fff;
+        }
+    </style>
+    <title>Cola de animaciones </title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum ratione atque dolor quia tempora unde ipsa illum possimus aliquam deserunt.</p>
+
+    <div id="elem">
+
+    </div>
+
+    <script>
+        var elem = $('#elem');
+        console.log('Empiezan los eventos...')
+
+        console.log(elem.queue());
+        
+        elem.animate({
+            width:100,
+            height:50,
+        },1000)
+
+        elem.queue(function(next){
+            $.get('assets/data/1.json',function(r){
+                elem.text(r.mensaje);
+                next();
+            })
+        })
+        
+        elem.animate({
+            borderRadius: 20,
+        },1000)
+        console.log(`Animaciones en cola: ${elem.queue().length}`);
+
+    </script>
+    
+</body>
+</html>

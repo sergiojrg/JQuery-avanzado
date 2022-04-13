@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Promesas</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, quibusdam ratione libero dolor voluptatem eaque obcaecati minus dignissimos nam a!</p>
+
+    <script>
+        function JSON_reader(archivo){
+            var d = new $.Deferred();
+            $.ajax({
+                url: `assets/data/${archivo}.json`,
+                dataType: 'JSON',
+                success: function(data){
+                    d.resolve(data);
+                },
+                error: function(){
+                    d.reject();
+                }
+            })
+            return d.promise();
+        }
+
+        var resultado = JSON_reader('1')
+
+        resultado.done(function(data){
+            console.log('Data recibida: ',data)
+        })
+        resultado.fail(function(){
+            console.log('archivo no existe')
+        })
+    </script>
+    
+</body>
+</html>

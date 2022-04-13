@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Colocar máscaras a los inputs</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea voluptatem error provident? Earum sint veniam non quibusdam odio placeat cum.</p>
+    <p>vas a cdn y buscas maskedinput</p>
+    <p>https://github.com/digitalBush/jquery.maskedinput</p>
+
+    <label>Fecha</label>
+    <input type="text" id="fecha" class="form-control">
+    <br>
+
+    <label>Teléfono</label>
+    <input type="text" id="tel" class="form-control">
+    <br>
+
+    <label>Cédula</label>
+    <input type="text" id="ced" class="form-control">
+    <br>
+
+    <label>Color</label>
+    <input type="text" id="color" class="form-control">
+    <br>
+
+    <script>
+        $('#fecha').mask('99/99/9999')
+        $('#tel').mask('+(99)999-999-99-99')
+        $('ced').mask('9-9h99-99999-9')
+        // $('color').mask('')
+
+        $.mask.definitions['h'] = "[A-Fa-f0-9]"
+
+        $('#color').mask('#hhhhhh');
+
+    </script>
+    
+</body>
+</html>

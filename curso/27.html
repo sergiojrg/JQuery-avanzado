@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Unica llamada de un evento</title>
+</head>
+<body>
+
+    <h1>Algun texto</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quaerat facilis accusantium eum tenetur officia labore corporis sint fuga nostrum!</p>
+
+    <button id="btnAccion">click me</button>
+    
+    <script>
+        var boton = $('#btnAccion');
+        var click = false;
+
+        boton.one('click',function(){
+            alert('hola mundo')
+        });
+
+    </script>
+</body>
+</html>

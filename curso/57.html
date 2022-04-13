@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Listas de Callbacks</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum door, sit amet consectetur adipisicing elit. At hic dolorum ullam excepturi aliquid exercitationem impedit itaque aliquam expedita praesentium!</p>
+
+    <button id="btn1">1</button>
+    <button id="btn2">2</button>
+
+    <input type="checkbox" checked id="checkBox">
+
+    <script>
+        var cb = $.Callbacks();
+        console.log(cb)
+        
+        cb.add(function(mensaje){
+            console.log(mensaje)
+        })
+
+        cb.add(function(){
+            console.log('----------')
+        })
+
+        $('#btn1').on('click',function(){
+            cb.fire('linea 1')
+            cb.fire('linea 2')
+            cb.fire('linea 3')
+        })
+
+        var cbFlag = $.Callbacks('stopOnFalse');
+
+        cbFlag.add(function(){
+            return $('#checkBox').is(':checked')
+        })
+        cbFlag.add(function(){
+            console.log('El checkbox esta seleccionado')
+        })
+
+        $('#btn2').on('click',function(){
+            cbFlag.fire()
+        })
+
+
+    </script>
+    
+</body>
+</html>

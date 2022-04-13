@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        #caja{
+            height:30px;
+            width:30px;
+            background-color: blue;
+        }
+    </style>
+    <title>Propiedas CSS personalizadas</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae deserunt alias qui aperiam sequi est maxime magni harum ipsum ducimus.</p>
+
+    <div id="caja">
+
+    </div>
+
+    <script>
+        $.cssHooks['rotar'] = {
+            set: function(elem,value){
+                console.log(value)
+                $(elem).css(`transform`, `rotate(${parseInt(value,10)}deg)`);
+            }
+        }
+
+        $('#caja').css('rotar',25)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Peticion AJAX simplificada</title>
+</head>
+<body>
+    <h1>Aglun texto</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum doloribus magnam vitae similique impedit minima soluta obcaecati ratione, saepe consequuntur.</p>
+
+    <script>
+        $.get('assets/data/12.json').done(function(r){
+            console.log(r.mensaje)
+        })
+        .fail(function(err){
+            console.log('Archivo no existe')
+        })
+    </script>
+    
+</body>
+</html>

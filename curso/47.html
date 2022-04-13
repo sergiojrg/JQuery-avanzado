@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Reutilizar codigo</title>
+</head>
+<body>
+    <h1>Algun</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odit excepturi voluptatem dolor inventore fuga cupiditate consectetur nesciunt corporis delectus?</p>
+
+    <div class="col-md-6">
+        <label>Nombre</label>
+        <input type="text" required id="txtNombre" class="form-control" placeholder="Nombre">
+    </div>
+    <div class="col-md-6">
+        <label for="">Apellido</label>
+        <input type="text" required id="txtApellido" class="form-control" placeholder="Apellido">
+    </div>
+
+    <script>
+        $.fn.requerido = function(){
+            var input = $(this)
+                ayuda = '';
+            
+            if(input.attr('required')){
+                mostrarError(input)
+            }
+    
+            input.on('keyup',function(){
+                if(input.val().length > 0){
+                    input.next().remove()
+                    input.parent().removeClass('has-danger')
+                }else{
+                    mostrarError(input)
+                }
+            })
+    
+            function mostrarError(input){
+                ayuda = ' '
+                var ayudaDiv = $(input).parent().children()
+                console.log(ayudaDiv.children())
+                if(ayudaDiv.length > 2){
+                    $(ayuda).remove()
+                }
+                else{
+                    ayuda += '<div class="text-danger"> Este campo es necesario</div>'
+                    input.after(ayuda)
+                    input.parent().addClass('has-danger')
+                }
+            }
+        }
+
+        $('#txtNombre').requerido();
+        $('#txtApellido').requerido();
+    </script>
+    
+</body>
+</html>

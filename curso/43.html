@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Ubicacion de IP</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem qui vel minus magni officiis natus voluptates itaque sint corrupti blanditiis?</p>
+
+    <script>
+        var key = 'ef719d908aa41d9205041ebf9d9b31be'
+            api = 'https://freegeoip.net/json/187.32.245.80?callback='
+
+        $.getJSON(api,function(r){
+            console.log(r.time_zone)
+            console.log(r.ip)
+        })
+    </script>
+    
+</body>
+</html>

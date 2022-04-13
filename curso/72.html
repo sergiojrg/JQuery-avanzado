@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="assets/libs/caman.full.pack.js"></script>
+    <title>Cortar,escalar,blur,cambiar colores y mas</title>
+</head>
+<body>
+    <h1>Cortar, escalar,blur, cambiar colores</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi illum voluptate doloribus ratione distinctio. Eaque, dolore. Nemo, dolores. Officia, omnis?</p>
+    <p>libreria Camanjs</p>
+
+    <!-- si queremos que la imagen ya venga con filtros -->
+    <!-- ya puestos se puede poner un data attribute -->
+    <img data-caman="brightness(10) contrast(30) sepia(60) saturation(-30)" src="assets/img/test1_640.jpg">
+
+    <img id="img2" src="assets/img/test1_640.jpg">
+
+    <button type="button" id="btn1">Cambiar</button>
+    <button type="button" id="btn2">Reset</button>
+
+
+    <script>
+        $('#btn1').on('click',function(){
+            Caman('#img2', function () {
+                this.brightness(10);
+                this.contrast(30);
+                this.sepia(60);
+                this.saturation(-30);
+                this.render();
+            });
+        })
+
+        $('#btn2').on('click',function(){
+            Caman('#img2',function(){
+                this.reset();
+                this.render()
+            })
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <title>Metodo map</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto doloremque eius itaque repellendus laudantium ut suscipit nesciunt quidem, placeat officia.</p>
+
+    <ul>
+        <li><input type="checkbox" value="Lunes" class="dia" checked> Lunes</li>
+        <li><input type="checkbox" value="Martes" class="dia" checked> Martes</li>
+        <li><input type="checkbox" value="Miercoles" class="dia" checked> Miercole</li>
+        <li><input type="checkbox" value="Jueves" class="dia" checked> Jueves</li>
+        <li><input type="checkbox" value="Viernes" class="dia" > Viernes</li>
+        <li><input type="checkbox" value="Sabado" class="dia" > Sabado</li>
+        <li><input type="checkbox" value="Domingo" class="dia" > Domingo</li>
+    </ul>
+
+    <p id="dias-laborales">
+
+    </p>
+
+    <script>
+        var checkboxes = $('.dia')
+            mensaje = $('#dias-laborales')
+
+        function callback(){
+            console.log('Se disparo')
+            var dias = checkboxes.filter(':checked').map(function(){
+                return $(this).val()
+            }).get()
+
+            console.log(dias)
+
+            mensaje.text(`Eh seleccionado: ${dias.join(' - ')}`)
+        }
+
+        checkboxes.on('click',callback)
+
+        callback()
+    </script>
+    
+</body>
+</html>

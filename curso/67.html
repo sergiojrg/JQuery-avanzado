@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        #div-notificacion{
+            position:fixed;
+            top:20px;
+            right:0;
+            width:100px;
+            height:100px;
+            background: blue;
+        }
+        .notificacion{
+            width:150px;
+            padding:10px;
+            height:100px;
+            background: purple;
+            color:#fff;
+            margin-bottom: 10px;
+
+        }
+    </style>
+    <title>Obtener parametros de los elementos del DOM</title>
+</head>
+<body>
+
+    <div id="div-notificacion">
+        <!-- <div class="notificacion">
+            Sergio Ramirez
+            <a href="#"></a>
+        </div> -->
+    </div>
+
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis modi aliquam eum. Perferendis ipsam et voluptatibus, reprehenderit alias quae at!</p>
+
+    <button>Crear un nuevo elemento</button>
+
+    <script>
+        var divNoti = $('#div-notificacion')
+        $('button').on('click',function(){
+
+            var rand = Math.round(Math.random()*10);
+            var content = ''
+
+           content += ' <div data-numero="'+ rand +'" class="notificacion">'
+           content += '   '+ rand +'  '
+           content += '     <a href="#">X</a>'
+           content += ' </div>'
+
+           divNoti.append(content)
+        })
+
+        divNoti.on('click','div a',function(){
+            console.log(this)
+            $(this).parent().slideUp(500,function(){
+                $(this).remove()
+            })
+        })
+
+        divNoti.on('click','div',function(){
+            var valor = $(this).data('numero')
+            console.log('El valor del div ',valor)
+        })
+    </script>
+    
+</body>
+</html>

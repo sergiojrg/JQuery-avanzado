@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="assets/libs/jquery-qrcode.min.js"></script>
+    <style>
+        #qr{
+            height:220px;
+            padding:30px;
+        }
+    </style>
+    <title>Generar codigos QR</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur a fugit ipsam, deserunt necessitatibus soluta reprehenderit ex asperiores sequi. Minus!</p>
+
+    <p>Generar codigos QR</p>
+    <p>https://larsjung.de/jquery-qrcode/</p>
+
+    <div id="qr" >
+
+    </div>
+
+    <script>
+        $('#qr').qrcode(
+            {
+                // render method: 'canvas', 'image' or 'div'
+                render: 'canvas',
+
+                // version range somewhere in 1 .. 40
+                minVersion: 1,
+                maxVersion: 40,
+
+                // error correction level: 'L', 'M', 'Q' or 'H'
+                ecLevel: 'L',
+
+                // offset in pixel if drawn onto existing canvas
+                left: 0,
+                top: 0,
+
+                // size in pixel
+                size: 200,
+
+                // code color or image element
+                fill: '#000',
+
+                // background color or image element, null for transparent background
+                background: null,
+
+                // content
+                text: 'sergio@gmail.com',
+
+                // corner radius relative to module width: 0.0 .. 0.5
+                radius: 0,
+
+                // quiet zone in modules
+                quiet: 0,
+
+                // modes
+                // 0: normal
+                // 1: label strip
+                // 2: label box
+                // 3: image strip
+                // 4: image box
+                mode: 0,
+
+                mSize: 0.1,
+                mPosX: 0.5,
+                mPosY: 0.5,
+
+                label: 'no label',
+                fontname: 'sans',
+                fontcolor: '#000',
+
+                image: null
+            }
+        )
+        
+    </script>
+    
+</body>
+</html>
