@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="assets/libs/caman.full.pack.js"></script>
+    <link rel="stylesheet" href="assets/libs/twentytwenty/css/twentytwenty.css">
+    <title>Filtros de instagram</title>
+</head>
+<body>
+    <h1>Algun titulo</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nulla magnam quasi excepturi aliquid nemo accusamus ex pariatur recusandae illo.</p>
+
+    <select id="filtros" class="form-control">
+        <option>Seleccione el filtro</option>
+        <option value="vintage">Vintage</option>
+        <option value="lomo">Lomo</option>
+        <option value="clarity">Clarity</option>
+        <option value="sinCity">Sin City</option>
+        <option value="sunrise">Sunrise</option>
+        <option value="crossProcess">Cross Process</option>
+        <option value="orangePeel">Orange Peel</option>
+        <option value="love">Love</option>
+        <option value="grungy">Grungy</option>
+        <option value="jarques">Jarques</option>
+        <option value="pinhole">Pinhole</option>
+        <option value="oldBoot">Old Boot</option>
+        <option value="glowingSun">Glowing Sun</option>
+        <option value="hazyDays">Hazy Days</option>
+        <option value="herMajesty">Her Majesty</option>
+        <option value="nostalgia">Nostalgia</option>
+        <option value="hemingway">Hemingway</option>
+        <option value="concentrate">Concentrate</option>
+    </select>
+      
+    <script>
+        var dropdown = $('#filtros'),
+            canvas = $('');
+
+        dropdown.change(function(){
+            var filtro = this.value;
+            var tmp = $('<canvas>').insertAfter(dropdown).hide()
+
+            Caman(tmp[0],'assets/img/Katy_Perry.jpg',function(){
+                canvas.remove()
+                canvas = tmp.show()
+
+                if(filtro in this){
+                    this[filtro]().render()
+                }
+
+            })
+        })
+
+        dropdown.trigger('change')
+
+    </script>
+    
+</body>
+</html>
